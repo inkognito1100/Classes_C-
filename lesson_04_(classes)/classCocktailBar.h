@@ -25,7 +25,7 @@ public:
         name = n;
         income = i;
     }
-    void Sell(Alcohol *element, int quantity) {
+    void Sell(Liquor *element, int quantity) {
         income += element->GetCost() * quantity;
         std::cout << "В \"" << name << "\" продано " << quantity << " порций " << element->GetName() << std::endl;
     }

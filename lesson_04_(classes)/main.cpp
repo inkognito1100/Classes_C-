@@ -16,8 +16,8 @@ using namespace std;
 
 int main()
 {
-    Alcohol *juice = new Alcohol("Orange juice", 0, 100, NULL, NULL);
-    Alcohol *vodka = new Alcohol("Vodka", 40, 500, NULL, NULL);
+    Alcohol *juice = new Alcohol("Orange juice", 0, 100);
+    Alcohol *vodka = new Alcohol("Vodka", 40, 500);
     Cocktail *screwdriver = new Cocktail("Screwdriver", 300);
     screwdriver->AddComponent(vodka, 50);
     screwdriver->AddComponent(juice, 150);

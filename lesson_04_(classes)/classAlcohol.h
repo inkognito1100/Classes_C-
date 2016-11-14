@@ -13,26 +13,18 @@
 using namespace std;
 
 //класс описывает чистый алкогольный напиток (напиток может быть и не алкогольным, вводить новый класс смысла нет, т.к. у него поля будут идентичны классу алкоголя)
-class Alcohol {
-private:
+class Liquor {
+protected:
     std::string name;    //название
-    int degrees;    //крепость
     float cost;     //цена
 public:
-    Alcohol *lowerDeg, *higherDeg;   //указатели на более слабый и более крепкий напитки
-    Alcohol() {
+    Liquor() {
         name = "unknown";
-        degrees = 0;
         cost = 0;
-        lowerDeg = NULL;
-        higherDeg = NULL;
     }
-    Alcohol(std::string n, int deg, float c, Alcohol *low, Alcohol *high) {
+    Liquor(std::string n, float c) {
         name = n;
-        degrees = deg;
         cost = c;
-        lowerDeg = low;
-        higherDeg = high;
     }
     void SetName(string n) {
         name = n;
@@ -40,21 +32,42 @@ public:
     void SetCost(float c) {
         cost = c;
     }
-    void SetDegrees(int deg) {
-        degrees = deg;
-    }
     string GetName() {
         return name;
     }
     float GetCost() {
         return cost;
     }
+    virtual int GetDegrees() {
+        return 0;
+    }
+    ~Liquor() {
+        
+    }
+};
+
+class Alcohol: public Liquor {
+private:
+    int degree;
+public:
+    Alcohol() {
+        name = "unknown";
+        degree = 0;
+        cost = 0;
+    }
+    Alcohol(std::string n, float c, int deg) {
+        name = n;
+        degree = deg;
+        cost = c;
+    }
+    void SetDegrees(int deg) {
+        degree = deg;
+    }
     int GetDegrees() {
-        return degrees;
+        return degree;
     }
     ~Alcohol() {
-        delete lowerDeg;
-        delete higherDeg;
+        
     }
 };
 

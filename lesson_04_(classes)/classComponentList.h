@@ -15,7 +15,7 @@ using namespace std;
 
 //узел списка
 struct Component {
-    Alcohol *element;
+    Liquor *element;
     int volume;
     Component *next;
 };
@@ -29,7 +29,7 @@ public:
         head = NULL;
     }
     //добавление узла по номеру, если узлов меньше, вернет false
-    bool Add(int number, Alcohol *element, int vol) {
+    bool Add(int number, Liquor *element, int vol) {
         int i = 0;
         Component *now = head, *buf;
         number--;

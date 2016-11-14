@@ -39,7 +39,7 @@ public:
         return income;
     }
     //продать алкоголь
-    void Sell(Alcohol *element, int quantity) {
+    virtual void Sell(Alcohol *element, int quantity) {
         income += (element->GetCost()) * quantity;
         std::cout << "В \"" << name << "\" продано " << quantity << " бутылок " << element->GetName() << std::endl;
     }
