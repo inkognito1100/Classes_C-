@@ -15,9 +15,9 @@ using namespace std;
 
 //узел списка
 struct Component {
-    Liquor *element;
-    int volume;
-    Component *next;
+    Liquor *element;    //указатель на чистый напиток
+    int volume;         //объем этого напитка
+    Component *next;    //указатель на следующий узел списка
 };
 
 //список компонентов

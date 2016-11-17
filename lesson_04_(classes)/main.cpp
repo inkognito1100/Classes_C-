@@ -28,10 +28,11 @@ int main()
     shop.PrintIncome();
     cout << "Из магазина украли: " << shop.Rob() << endl;
     shop.PrintIncome();
-    CocktailBar bar = *new CocktailBar("Drunken oyster", 0);
+    CocktailBar bar = *new CocktailBar("Боржч", 0);
     bar.PrintIncome();
-    bar.Sell(vodka, 5);
-    bar.Sell(screwdriver, 5);
+    bar.MakeOrder(vodka, 5);
+    bar.MakeOrder(screwdriver, 5);
+    bar.MakeCocktail(2);
     bar.PrintIncome();
     bar.BreakSomething(300);
     bar.PrintIncome();

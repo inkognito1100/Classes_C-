@@ -49,7 +49,7 @@ public:
         components.Add(1, alc, vol);
         return;
     }
-    //подсчет крепость коктейля
+    //подсчет крепость коктейля (считается объем чистого спирта и делится на полный объем коктейля)
     int GetCocktailDegree() {
         Component *now = NULL;
         int cocktailVolume = 0;

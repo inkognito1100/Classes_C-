@@ -43,6 +43,7 @@ public:
         income += (element->GetCost()) * quantity;
         std::cout << "В \"" << name << "\" продано " << quantity << " бутылок " << element->GetName() << std::endl;
     }
+    //выводит выручку магазина
     void PrintIncome() {
         std::cout << "Сейчас в кассе \"" << name << "\" " << income << " рублей" << std::endl;
     }

@@ -12,7 +12,7 @@
 #include <iostream>
 using namespace std;
 
-//класс описывает чистый алкогольный напиток (напиток может быть и не алкогольным, вводить новый класс смысла нет, т.к. у него поля будут идентичны классу алкоголя)
+//класс описывает безалкогольный напиток
 class Liquor {
 protected:
     std::string name;    //название
@@ -38,6 +38,7 @@ public:
     float GetCost() {
         return cost;
     }
+    //возвращает крепость напитка, всегда 0, т.к. это безалкогольный класс
     virtual int GetDegrees() {
         return 0;
     }
@@ -46,9 +47,10 @@ public:
     }
 };
 
+//класс описывает чистый алкогольный напиток
 class Alcohol: public Liquor {
 private:
-    int degree;
+    int degree;     //крепость напитка
 public:
     Alcohol() {
         name = "unknown";
@@ -63,6 +65,7 @@ public:
     void SetDegrees(int deg) {
         degree = deg;
     }
+    //метод переопределен
     int GetDegrees() {
         return degree;
     }
