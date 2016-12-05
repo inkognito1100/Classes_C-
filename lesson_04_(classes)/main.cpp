@@ -11,14 +11,16 @@
 #include "classCocktail.h"
 #include "classLiquorShop.h"
 #include "classCocktailBar.h"
+#include "classRecipes.h"
 
 using namespace std;
 
 int main()
 {
-    Alcohol *juice = new Alcohol("Orange juice", 0, 100);
+    Liquor *juice = new Alcohol("Orange juice", 0, 100);
     Alcohol *vodka = new Alcohol("Vodka", 40, 500);
     Cocktail *screwdriver = new Cocktail("Screwdriver", 300);
+    Recipes *recipiesBook = new Recipes();
     screwdriver->AddComponent(vodka, 50);
     screwdriver->AddComponent(juice, 150);
     cout << "Крепость отвертки: " << screwdriver->GetCocktailDegree() << "%\n";
@@ -36,10 +38,16 @@ int main()
     bar.PrintIncome();
     bar.BreakSomething(300);
     bar.PrintIncome();
+    
+    recipiesBook->AddRecipe("screwdriver", "blablabla");
+    recipiesBook->PrintRecipe("screwdriver");
+    recipiesBook->PrintRecipe("12123123");
+    
     delete juice;
     delete vodka;
     delete screwdriver;
     shop.~LiquorShop();
     bar.~CocktailBar();
+    delete recipiesBook;
     return 0;
 }

@@ -49,6 +49,10 @@ public:
         components.Add(1, alc, vol);
         return;
     }
+    void AddComponent(Liquor *liq, int vol) {
+        components.Add(1, liq, vol);
+        return;
+    }
     //подсчет крепость коктейля (считается объем чистого спирта и делится на полный объем коктейля)
     int GetCocktailDegree() {
         Component *now = NULL;
